@@ -1,0 +1,102 @@
+.c-filter
+	font-size: 0
+
+.c-filter__nav
+	position: relative
+	font-size: initial
+	height: 100px
+	padding: 20px 0
+
+
+.c-filter__nav--item
+	height: 25px
+	padding: 10px 20px
+	background-color: #525252
+	color: white
+
+.c-filter__nav--itemReset
+	background-color: blue
+	text-transform: uppercase
+
+.c-filter__item
+	display: inline-block
+	height: 100%
+	width: auto
+	padding: 10px 5px
+	font-size: initial
+	background-color: #a1a1a1
+	outline: 1px solid white
+	text-align: center
+	text-transform: uppercase
+	line-height: 140px
+
+.c-div
+	display: inline-block
+	width: 10%
+	height: 150px
+	font-size: initial
+	&[data-tag="cyan"]
+		background-color: cyan
+	&[data-tag="magenta"]
+		background-color: magenta
+	&[data-tag="yellow"]
+		background-color: yellow
+	&[data-tag="black"]
+		background-color: black
+		color: white
+
+
+
+.c-filter__target:not(:target) ~ .c-filter__item
+	opacity: 1
+
+
+.c-filter__target:target ~ .c-filter__item
+	opacity: .2
+	display: none
+	visibility: hidden
+	height: 0
+	transition: all .5s linear
+	
+
+
+
+[id="tag:cyan"]:target ~ [data-tag~="cyan"],
+[id="tag:magenta"]:target ~ [data-tag~="magenta"],
+[id="tag:yellow"]:target ~ [data-tag~="yellow"],
+[id="tag:black"]:target ~ [data-tag~="black"]
+	opacity: 1
+	display: inline-block
+	visibility: visible
+	height: 100%
+	transition: all .5s linear
+	
+
+[id="tag:cyan"]:target ~ .c-filter__nav [href="#tag:cyan"]
+	background-color: cyan
+	pointer-events: none
+	color: black
+
+[id="tag:magenta"]:target ~ .c-filter__nav [href="#tag:magenta"]
+	background-color: magenta
+	pointer-events: none
+	color: black
+
+[id="tag:yellow"]:target ~ .c-filter__nav [href="#tag:yellow"]
+	background-color: yellow
+	pointer-events: none
+	color: black
+
+[id="tag:black"]:target ~ .c-filter__nav [href="#tag:black"]
+	background-color: black
+	pointer-events: none
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+//border-box
+*, *:after, *:before
+	box-sizing: border-box
+	// -webkit-backface-visibility: hidden
+	// transform-style: preserve-3d
+
+// layout variables
+
+$susy: (columns: 16,gutters: 0,math: fluid,output: float,gutter-position: after, global-box-sizing: border-box)
+
+$m: 650px
+$l: 800px
+$xl: 1280px
+$xxl: 1440px
+
+html, body
+	-webkit-text-size-adjust: none
+
+.wrapper
+	max-width: $xxl
+	margin: 0 auto
