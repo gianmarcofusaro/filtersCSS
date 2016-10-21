@@ -1,26 +1,60 @@
-.c-filter
+.filter
 	font-size: 0
+	display: flex
+	justify-content: center
+	align-content: center
+	align-items: center
 
-.c-filter__nav
-	position: relative
+.filter__nav
+	display: flex
+	justify-content: center
+	align-content: center
+	position: absolute
 	font-size: initial
-	height: 100px
-	padding: 20px 0
+	height: 300px
+	width: 300px
+	border-radius: 300px
+	background-color: black
+	z-index: 10
 
-
-.c-filter__nav--item
-	height: 25px
-	padding: 10px 20px
+.filter__nav--item
+	position: absolute
+	height: 80px
+	width: 80px
+	border-radius: 50px
 	background-color: #525252
 	color: white
+	text-align: center
+	line-height: 80px
+	text-transform: uppercase
+	font-size: 10px
+	&:nth-child(1)
+		top: 90px
+		width: 120px
+		height: 120px
+		line-height: 120px
 
-.c-filter__nav--itemReset
-	background-color: blue
+	&:nth-child(2)
+		top: -20px
+
+	&:nth-child(3)
+		top: 240px
+
+	&:nth-child(4)
+		top: 110px
+		left: -20px
+
+	&:nth-child(5)
+		top: 110px
+		left: 240px
+
+.filter__nav--itemReset
+	background-color: #555555
 	text-transform: uppercase
 
-.c-filter__item
+.filter__item
 	display: inline-block
-	height: 100%
+	// height: 100%
 	width: auto
 	padding: 10px 5px
 	font-size: initial
@@ -32,8 +66,8 @@
 
 .c-div
 	display: inline-block
-	width: 10%
-	height: 150px
+	width: 25%
+	height: 100vh
 	font-size: initial
 	&[data-tag="cyan"]
 		background-color: cyan
@@ -47,19 +81,16 @@
 
 
 
-.c-filter__target:not(:target) ~ .c-filter__item
+.filter__target:not(:target) ~ .filter__item
 	opacity: 1
+	transition: all .5s linear
 
-
-.c-filter__target:target ~ .c-filter__item
+.filter__target:target ~ .filter__item
 	opacity: .2
-	display: none
-	visibility: hidden
-	height: 0
+	// display: none
+	// visibility: hidden
 	transition: all .5s linear
 	
-
-
 
 [id="tag:cyan"]:target ~ [data-tag~="cyan"],
 [id="tag:magenta"]:target ~ [data-tag~="magenta"],
@@ -68,31 +99,31 @@
 	opacity: 1
 	display: inline-block
 	visibility: visible
-	height: 100%
+	// height: 100%
 	transition: all .5s linear
 	
 
-[id="tag:cyan"]:target ~ .c-filter__nav [href="#tag:cyan"]
+[id="tag:cyan"]:target ~ .filter__nav [href="#tag:cyan"]
 	background-color: cyan
 	pointer-events: none
 	color: black
 
-[id="tag:magenta"]:target ~ .c-filter__nav [href="#tag:magenta"]
+[id="tag:magenta"]:target ~ .filter__nav [href="#tag:magenta"]
 	background-color: magenta
 	pointer-events: none
 	color: black
 
-[id="tag:yellow"]:target ~ .c-filter__nav [href="#tag:yellow"]
+[id="tag:yellow"]:target ~ .filter__nav [href="#tag:yellow"]
 	background-color: yellow
 	pointer-events: none
 	color: black
 
-[id="tag:black"]:target ~ .c-filter__nav [href="#tag:black"]
+[id="tag:black"]:target ~ .filter__nav [href="#tag:black"]
 	background-color: black
 	pointer-events: none
 
-
-
+h2
+	display: none
 
 
 
